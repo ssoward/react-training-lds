@@ -3,6 +3,9 @@
 atlassian-ide-plugin.xml
 .DS_Store
 atlassian-ide-plugin.xml
+.storybook
+.happypack
+.tests
 
 target/
 node_modules/
