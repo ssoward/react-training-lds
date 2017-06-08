@@ -1,0 +1,14 @@
+@import '../../variables.css';
+
+.default{
+  display: flex;
+  justify-content: space-between;
+  background: #eaeaea;
+  padding:0.5em;
+
+
+}
+.title{
+  margin:0;
+
+}
