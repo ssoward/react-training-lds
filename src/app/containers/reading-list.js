@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { setPageMeta } from '../actions/page-meta';
 import ListView from '../views/ListView';
 import {init as setUserInfo} from '../actions/user';
+import {toggleGreeting} from '../actions/settings';
 
 const pageMeta = {
   title: "...",
@@ -14,13 +15,15 @@ const pageMeta = {
 
 // takes values from the redux store and maps them to props
 const mapStateToProps = state => ({
-  name: state.user.name
+  name: state.user.name,
+  isGreetingVisible: state.settings.greetingVisible
 });
 
 // binds the result of action creators to redux dispatch, wrapped in callable functions
 const bindActionsToDispatch = dispatch => ({
   setPageMeta: (meta) => { dispatch(setPageMeta(meta)) },
-  setUserInfo: (meta) => { dispatch(setUserInfo(meta)) }
+  setUserInfo: (meta) => { dispatch(setUserInfo(meta)) },
+  toggleGreeting: () => { dispatch(toggleGreeting()) }
 });
 
 // takes the result of mapStateToProps as store, and bindActionsToDispatch as actions
@@ -31,6 +34,7 @@ const mergeAllProps = (store, actions) => ({
     actions.setPageMeta(pageMeta);
     actions.setUserInfo();
   },
+  onCloseGreeting: actions.toggleGreeting,
   welcomeText: `welcome from container,  ${store.name}`
 });
 
