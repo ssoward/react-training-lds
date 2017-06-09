@@ -6,6 +6,6 @@ storiesOf ('BookSearch', module)
   .add ('default', () => 
     <BookSearch
       message="Hello Action & Message"
-      onClose={action("close button clicked")}
+      onClickBookAdd={action("add button clicked")}
       onChangeSaveInputValue={action("input entered")}
     />);

@@ -1,5 +1,9 @@
 @import '../../variables.css';
 
 .default{
+  padding: 3em;
 
+  & span {
+      color: #777
+    }
 }
