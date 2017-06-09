@@ -35,7 +35,7 @@ const mergeAllProps = (store, actions) => ({
     actions.setUserInfo();
   },
   onCloseGreeting: actions.toggleGreeting,
-  welcomeText: `welcome from container,  ${store.name}`
+  welcomeText: `welcome from container123,  ${store.name}`
 });
 
 const storeConnector = connect(

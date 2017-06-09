@@ -22,7 +22,7 @@ router.get('/nav', cors(), (req, res) => {
 router.get('/user', cors(), (req, res) => {
   res.send({
     id:1,
-    name: 'from server'
+    name: 'from server XHR call 777'
   })
 });
 

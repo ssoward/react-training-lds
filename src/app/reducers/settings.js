@@ -2,7 +2,7 @@ export const TOGGLE_GREETING = "TOGGLE_GREETING"
 
 const defaultState = {
   greetingVisible: true
-}
+};
 
 const settings = (state = defaultState, {type, payload}) => {
   switch(type){

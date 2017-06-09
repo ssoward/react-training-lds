@@ -223,7 +223,7 @@
 	router.get('/user', (0, _cors2.default)(), function (req, res) {
 	    res.send({
 	        id: 1,
-	        name: 'from server'
+	        name: 'from server XHR call 777'
 	    });
 	});
 
@@ -275,9 +275,9 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _htmlMinifier = __webpack_require__(74);
+	var _htmlMinifier = __webpack_require__(75);
 
-	var _ssResolve = __webpack_require__(75);
+	var _ssResolve = __webpack_require__(76);
 
 	var _env = __webpack_require__(24);
 
@@ -1772,6 +1772,8 @@
 
 	var _user = __webpack_require__(72);
 
+	var _settings = __webpack_require__(74);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1788,7 +1790,8 @@
 	// takes values from the redux store and maps them to props
 	var mapStateToProps = function mapStateToProps(state) {
 	  return {
-	    name: state.user.name
+	    name: state.user.name,
+	    isGreetingVisible: state.settings.greetingVisible
 	  };
 	};
 
@@ -1800,6 +1803,9 @@
 	    },
 	    setUserInfo: function setUserInfo(meta) {
 	      dispatch((0, _user.init)(meta));
+	    },
+	    toggleGreeting: function toggleGreeting() {
+	      dispatch((0, _settings.toggleGreeting)());
 	    }
 	  };
 	};
@@ -1812,7 +1818,8 @@
 	      actions.setPageMeta(pageMeta);
 	      actions.setUserInfo();
 	    },
-	    welcomeText: 'welcome from container,  ' + store.name
+	    onCloseGreeting: actions.toggleGreeting,
+	    welcomeText: 'welcome from container123,  ' + store.name
 	  });
 	};
 
@@ -1936,10 +1943,11 @@
 	    'div',
 	    { className: (0, _joinClassnames2.default)(className, _style2.default.default) },
 	    _react2.default.createElement(
-	      'h1',
+	      'h3',
 	      { className: (0, _joinClassnames2.default)(_style2.default.title) },
 	      message
 	    ),
+	    '(component Greeting.js)',
 	    _react2.default.createElement(
 	      _Button2.default,
 	      { onClick: onClose },
@@ -2011,12 +2019,31 @@
 
 /***/ }),
 /* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.toggleGreeting = undefined;
+
+	var _settings = __webpack_require__(48);
+
+	var toggleGreeting = exports.toggleGreeting = function toggleGreeting() {
+	  return {
+	    type: _settings.TOGGLE_GREETING
+	  };
+	};
+
+/***/ }),
+/* 75 */
 /***/ (function(module, exports) {
 
 	module.exports = require("html-minifier");
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2026,11 +2053,11 @@
 	});
 	exports.wrap = exports.resolve = undefined;
 
-	var _resolver = __webpack_require__(76);
+	var _resolver = __webpack_require__(77);
 
 	var _resolver2 = _interopRequireDefault(_resolver);
 
-	var _wrap = __webpack_require__(77);
+	var _wrap = __webpack_require__(78);
 
 	var _wrap2 = _interopRequireDefault(_wrap);
 
@@ -2041,7 +2068,7 @@
 	exports.default = { resolve: _resolver2.default, wrap: _wrap2.default };
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -2072,7 +2099,7 @@
 	};
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

@@ -5,11 +5,10 @@ import Button from '../Button';
 
 export const Greeting = ({message, onClose, className}) => (
     <div className={classes(className, styles.default)}>
-      <h1 className={classes(styles.title)}>{message}</h1>
+      <h3 className={classes(styles.title)}>{message}</h3>
+      (component Greeting.js)
       <Button onClick={onClose}>ⓧ</Button>
-      
     </div>
-);
-
+); 
 
 export default Greeting;
