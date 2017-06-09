@@ -12,7 +12,7 @@ node_modules/
 coverage/
 *.log
 logs/
-
+dist/
 #Each developer will have a unique app name and domain, so this file shouldn't be tracked
 manifest.yml
 application-local.yml
