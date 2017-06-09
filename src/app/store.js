@@ -11,11 +11,12 @@ import nav, * as fromSiteNav from './reducers/site-nav';
 import pageMeta, * as fromPageMeta from './reducers/page-meta';
 import user from './reducers/user';
 import settings from './reducers/settings';
+import bookInput from './reducers/book-save-input-reducer';
 
 
 
 // create the master reducer
-const rootReducer = combineReducers({nav, system, routing, pageMeta, user, settings});
+const rootReducer = combineReducers({nav, system, routing, pageMeta, user, settings, bookInput});
 
 
 // Reexport scoped selectors here:

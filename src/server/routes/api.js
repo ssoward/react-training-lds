@@ -26,4 +26,11 @@ router.get('/user', cors(), (req, res) => {
   })
 });
 
+router.get('/book', cors(), (req, res) => {
+  res.send({
+    id:1,
+    name: 'test book'
+  })
+});
+
 export default router;
